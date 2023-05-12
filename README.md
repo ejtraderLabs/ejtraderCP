@@ -14,7 +14,7 @@ Copy Trade System for MetaTrader 4/MetaTrader 5 Client based on MQL Expertt.
 
 ## Features
 
-- Remote Publisher and Subscriber (Based on IP address)   
+- Remote Publisher and Subscriber (Based on IP address)    
 - New Order (Market Order, Pending Order)  
 - Modify Order (TP, SL)  
 - Close Order (Normal Close, Partial Close)  
