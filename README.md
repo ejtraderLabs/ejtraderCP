@@ -40,5 +40,3 @@ I would like to express my gratitude to [@jiowcl](https://github.com/jiowcl) for
 
 I would like to express my gratitude to [@dingmaotu](https://github.com/dingmaotu) for creating the [ZeroMQ for MQL](https://github.com/dingmaotu/mql-zmq) Their work has been an invaluable.
 
-
-https://github.com/dingmaotu/mql-zmq
