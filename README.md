@@ -38,4 +38,7 @@ Code released under the MIT license.
 
 I would like to express my gratitude to [@jiowcl](https://github.com/jiowcl) for creating the initial project. Their work has been an invaluable starting point for my modifications and improvements.
 
-I would like to express my gratitude to [@dingmaotu](https://github.com/dingmaotu) for creating the initial project. Their work has been an invaluable starting point for my modifications and improvements.
+I would like to express my gratitude to [@dingmaotu](https://github.com/dingmaotu) for creating the [ZeroMQ for MQL](https://github.com/dingmaotu/mql-zmq) Their work has been an invaluable.
+
+
+https://github.com/dingmaotu/mql-zmq
