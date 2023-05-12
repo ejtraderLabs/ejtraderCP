@@ -8,13 +8,15 @@
 #include <Zmq/Zmq.mqh>
 
 //--- Inputs
+input string genpub="6]&Tu69}*8wPDW&]dZ*@/NT<j):464xNauDn}&yM"; // Public Key
+input string gensec="iik8-mg<Q.tN47Va%ZX&e%0NB)O{V>+:NISEd!(/"; // secret Key
 input string Server                  = "tcp://*:5559";  // Push server ip
 input uint   ServerDelayMilliseconds = 300;             // Push to clients delay milliseconds (Default is 300)
 input bool   ServerReal              = false;           // Under real server (Default is false)
 input string AllowSymbols            = "";              // Allow Trading Symbols (Ex: EURUSDq,EURUSDx,EURUSDa)
 
 //--- Globales Application
-const string app_name    = "Ejtrader Expert Advisor";
+const string app_name    = "Ejtrader Copy Trader Server";
 
 //--- Globales ZMQ
 Context context;

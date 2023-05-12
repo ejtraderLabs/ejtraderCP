@@ -8,6 +8,10 @@
 #include <Zmq/Zmq.mqh>
 
 //--- Inputs
+input string genpub="6]&Tu69}*8wPDW&]dZ*@/NT<j):464xNauDn}&yM"; // Public Key
+input string gensec="iik8-mg<Q.tN47Va%ZX&e%0NB)O{V>+:NISEd!(/"; // secret Key
+input string ServerKey="JY%:%zEd6w]<6Z<%d]Ug&oy*-)XmAHJOFjfQUt8t"; // Server Public key
+
 input string Server                  = "tcp://localhost:5559";  // Subscribe server ip
 input uint   ServerDelayMilliseconds = 300;                     // Subscribe from server delay milliseconds (Default is 300)
 input bool   ServerReal              = false;                   // Under real server (Default is false)
@@ -40,7 +44,7 @@ struct SymbolPrefix
   };
 
 //--- Globales Application
-const string app_name    = "Ejtrader Expert Advisor";
+const string app_name    = "Ejtrader Copy Trader Client";
 
 //--- Globales ZMQ
 Context context;
@@ -73,6 +77,9 @@ SymbolPrefix local_symbolprefix[];
 string       local_symbolallow[];
 int          symbolprefix_size     = 0;
 int          symbolallow_size      = 0;
+
+
+int MILLISECOND_TIMER = 1;
 
 //+------------------------------------------------------------------+
 //| Expert program start function                                    |
@@ -186,6 +193,10 @@ void StartZmqClient()
   {
     if (zmq_server == "") 
       return;
+
+    subscriber.setCurvePublicKey(genpub);
+    subscriber.setCurveSecretKey(gensec);
+    subscriber.setCurveServerKey(ServerKey);
     
     int result = subscriber.connect(zmq_server);
     
