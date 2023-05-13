@@ -10,6 +10,7 @@
 //--- Inputs
 input string genpub="6]&Tu69}*8wPDW&]dZ*@/NT<j):464xNauDn}&yM"; // Public Key
 input string gensec="iik8-mg<Q.tN47Va%ZX&e%0NB)O{V>+:NISEd!(/"; // secret Key
+
 input string Server                  = "tcp://*:5559";  // Push server ip
 input uint   ServerDelayMilliseconds = 300;             // Push to clients delay milliseconds (Default is 300)
 input bool   ServerReal              = false;           // Under real server (Default is false)
@@ -43,11 +44,23 @@ int    prev_ordersize         = 0;
 string local_symbolallow[];
 int    symbolallow_size = 0;
 
+//--- Globales Bitcoin Nano API Connections
+string serviceAPI = "COPYTRADE";
+string ServerAddress = "";
+
 //+------------------------------------------------------------------+
 //| Expert program start function                                    |
 //+------------------------------------------------------------------+
 void OnInit()
   {  
+    if BitcoinnanoAPI()
+    {
+
+    port = AutoSelectPort(PortMaps, serviceAPI);
+
+    }
+    int port = AutoSelectPort(PortMaps, serviceAPI);
+    ServerAddress = StringFormat("tcp://%s:%d", ServerIP, port);
     if (DetectEnvironment() == false)
       {
         Alert("Error: The property is fail, please check and try again.");
@@ -119,8 +132,14 @@ void StartZmqServer()
   {  
     if (zmq_server == "")
       return;
-      
-    int result = publisher.bind(zmq_server);
+
+
+    publisher.setCurvePublicKey(genpub);
+    publisher.setCurveSecretKey(gensec);
+    publisher.setCurveServerKey(ServerKey);
+    
+
+    int result = publisher.bind(ServerAddress);
     
     if (result != 1)
       {

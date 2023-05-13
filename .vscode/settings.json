@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "*.mq4": "cpp",
-        "*.mqh": "cpp"
+        "*.mqh": "cpp",
+        "*.mq5": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

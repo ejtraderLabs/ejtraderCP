@@ -6,11 +6,15 @@
 #property show_inputs
 
 #include <Zmq/Zmq.mqh>
+#include <ejtrader/PortMap.mqh>
 
 //--- Inputs
 input string genpub="6]&Tu69}*8wPDW&]dZ*@/NT<j):464xNauDn}&yM"; // Public Key
 input string gensec="iik8-mg<Q.tN47Va%ZX&e%0NB)O{V>+:NISEd!(/"; // secret Key
-input string ServerKey="JY%:%zEd6w]<6Z<%d]Ug&oy*-)XmAHJOFjfQUt8t"; // Server Public key
+
+
+
+string ServerKey="JY%:%zEd6w]<6Z<%d]Ug&oy*-)XmAHJOFjfQUt8t"; // Server Public key
 
 input string Server                  = "tcp://localhost:5559";  // Subscribe server ip
 input uint   ServerDelayMilliseconds = 300;                     // Subscribe from server delay milliseconds (Default is 300)
