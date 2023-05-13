@@ -14,7 +14,7 @@ Copy Trade System for MetaTrader 4/MetaTrader 5 Client based on MQL Expertt.
 
 ## Features
 
-- Remote Publisher and Subscriber (Based on IP address) 
+- Remote and local Publisher and Subscriber (Based on IP address) 
 - Remote Publisher and Subscriber (Bitcoin Nano API with Manager GUI)   
 - New Order (Market Order, Pending Order)  
 - Modify Order (TP, SL)  
